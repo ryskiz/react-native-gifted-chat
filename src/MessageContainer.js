@@ -5,7 +5,9 @@ import {
   ListView,
   View,
   StyleSheet,
+  Dimensions
 } from 'react-native';
+const { width, height } = Dimensions.get('window');
 
 import shallowequal from 'shallowequal';
 import InvertibleScrollView from 'react-native-invertible-scroll-view';
@@ -167,7 +169,9 @@ export default class MessageContainer extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    top: height * 0.13,
+    paddingBottom: height * 0.13
   }
 });
 
