@@ -5,7 +5,11 @@ import {
   Platform,
   StyleSheet,
   View,
+  Dimensions,
+  KeyboardAvoidingView
 } from 'react-native';
+const { width, height } = Dimensions.get('window');
+const screenHeight = width < height ? height : width;
 
 import ActionSheet from '@expo/react-native-action-sheet';
 import moment from 'moment';
@@ -235,7 +239,7 @@ class GiftedChat extends React.Component {
    * Returns the height, based on current window size, taking the keyboard into account.
    */
   getMessagesContainerHeightWithKeyboard(composerHeight = this.state.composerHeight) {
-    return this.getBasicMessagesContainerHeight(composerHeight) - this.getKeyboardHeight() + this.getBottomOffset();
+    return this.getBasicMessagesContainerHeight(composerHeight);
   }
 
   prepareMessagesContainerHeight(value) {
@@ -496,7 +500,7 @@ class GiftedChat extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
 });
 
