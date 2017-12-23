@@ -511,6 +511,8 @@ GiftedChat.childContextTypes = {
 
 GiftedChat.defaultProps = {
   messages: [],
+  topPadding: 0,
+  bottomPadding: 0,
   text: undefined,
   placeholder: 'Type a message...',
   messageIdGenerator: () => uuid.v4(),
@@ -565,6 +567,8 @@ GiftedChat.defaultProps = {
 
 GiftedChat.propTypes = {
   messages: PropTypes.array,
+  topPadding: PropTypes.number,
+  bottomPadding: PropTypes.number,
   text: PropTypes.string,
   placeholder: PropTypes.string,
   messageIdGenerator: PropTypes.func,
