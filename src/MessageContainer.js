@@ -146,7 +146,7 @@ export default class MessageContainer extends React.Component {
     return (
       <View
         ref='container'
-        style={styles.container}
+        style={[styles.container, {top: this.props.topPadding, paddingBottom: this.props.bottomPadding}]}
       >
         <ListView
           enableEmptySections={true}
@@ -171,8 +171,8 @@ export default class MessageContainer extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    top: screenHeight * 0.13,
-    paddingBottom: screenHeight * 0.13
+    // top: screenHeight * 0.13,
+    // paddingBottom: screenHeight * 0.13
   }
 });
 
