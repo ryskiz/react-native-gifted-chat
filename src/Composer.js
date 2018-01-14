@@ -36,7 +36,7 @@ export default class Composer extends React.Component {
         onChangeText={(text) => this.onChangeText(text)}
 
         style={[styles.textInput, this.props.textInputStyle, { height: this.props.composerHeight }]}
-
+        keyboardType={Platform.OS === 'android' ? 'email-address' : 'default'}
         autoFocus={this.props.textInputAutoFocus}
 
         value={this.props.text}
